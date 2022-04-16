@@ -1,0 +1,26 @@
+/*
+ * 
+ * 
+ * 
+ */
+
+/**
+ * Behinhaltet verschiedene Waehrungen.
+ * @author timoj
+ *
+ */
+public enum Waehrung {
+	
+	
+//	 Sie soll die Konstanten EUR, BGN (Bulgarische Leva), DKK (Dänische Kronen) und MKD
+//	 (Mazedonischer Denar) haben - das sind alle die Währungen, die mit einem festen 
+//	 Umrechnungskurs an den Euro gebunden sind.
+	
+	// Const
+	EUR, BGN, DKK, MKD;
+	
+	public double euroInWaehrungUmrechnen(double betrag);
+	
+	public double waehrungInEuroUmrechnen(double betrag);
+
+}
