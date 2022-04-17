@@ -1,13 +1,8 @@
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class okkk {
 
-	/**
-	 * In der Methoden werden 2 Zahlen vom Benutzen abgefragt und dividiert. Das Ergebnis wird auf der Konsole zurueckgegeben.
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Hello Git!");
@@ -16,16 +11,16 @@ public class okkk {
 		System.out.println("Enter two numbers to divide them:");
 		System.lineSeparator();
 		System.out.println("First number: ");
-		BigDecimal a = sc.nextBigDecimal();
 		System.out.println("Second number: ");
+		BigDecimal a = sc.nextBigDecimal();
 		BigDecimal b = sc.nextBigDecimal();
-//		int a;
-//		int b;
-		BigDecimal c;
+		int a;
+		int b;
+		double c;
 		
-//		a = 55;
-//		b = 5;
-		c = a.divide(b, 0, RoundingMode.HALF_UP);
+		a = 55;
+		b = 5;
+		c = a / b;
 		System.out.println("c = " + c);
 	}
 

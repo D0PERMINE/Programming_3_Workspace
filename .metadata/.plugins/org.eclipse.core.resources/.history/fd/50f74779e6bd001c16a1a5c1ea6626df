@@ -25,7 +25,7 @@ public class okkk {
 		
 //		a = 55;
 //		b = 5;
-		c = a.divide(b, 0, RoundingMode.HALF_UP);
+		c = a.divide(b, 3, RoundingMode.HALF_UP);
 		System.out.println("c = " + c);
 	}
 

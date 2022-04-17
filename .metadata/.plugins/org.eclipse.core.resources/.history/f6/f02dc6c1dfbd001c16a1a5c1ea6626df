@@ -1,0 +1,17 @@
+
+public class okkk {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Git!");
+		
+		int a;
+		int b;
+		int c;
+		
+		a = 55;
+		b = 5;
+		System.out.println("c = " + c);
+	}
+
+}

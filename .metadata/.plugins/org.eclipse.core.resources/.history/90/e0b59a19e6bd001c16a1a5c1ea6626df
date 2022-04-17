@@ -1,5 +1,4 @@
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class okkk {
@@ -25,7 +24,7 @@ public class okkk {
 		
 //		a = 55;
 //		b = 5;
-		c = a.divide(b, 0, RoundingMode.HALF_UP);
+		c = a.divide(b, 2, BigDecimal.ROUND_UP);
 		System.out.println("c = " + c);
 	}
 
