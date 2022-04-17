@@ -243,22 +243,22 @@ public abstract class Konto implements Comparable<Konto>
 	
 	// ---------------------------------------------------------------------------- neue Methoden fuer Abgabe ----------------------------
 	
-	public boolean abheben(double betrag, Waehrung w) throws GesperrtException {
-		
-	}
-	
-	public void einzahlen(double betrag, Waehrung w) {
-		
-	}
-	
-	public Waehrung getAktuelleWaehrung() {
-		
-	}
-
-	public void waehrungswechsel(Waehrung neu) {
-		
-	}
-
-
+//	public boolean abheben(double betrag, Waehrung w) throws GesperrtException {
+//		return false;
+//	}
+//	
+//	public void einzahlen(double betrag, Waehrung w) {
+//		
+//	}
+//	
+//	public Waehrung getAktuelleWaehrung() {
+//		return Waehrung
+//	}
+//
+//	public void waehrungswechsel(Waehrung neu) {
+//		
+//	}
+//
+//
 
 }
