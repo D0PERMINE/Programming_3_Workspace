@@ -30,6 +30,8 @@ public class okkk {
 		System.out.println("OMG it worked!!!");
 		System.out.println("OMG it worked2!!!");
 		System.out.println("HOLY MOLYYYYY LETS GOOOO3");
+		int d = 12;
+		System.out.println("LOL im: " + d);
 	}
 
 }
