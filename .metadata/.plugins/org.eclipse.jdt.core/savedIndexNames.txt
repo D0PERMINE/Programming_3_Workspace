@@ -1,3 +1,4 @@
-INDEX VERSION 1.131+/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/.metadata/.plugins/org.eclipse.jdt.core
-996079180.index
-2723653622.index
+INDEX VERSION 1.131+H:\Programming\ECCLIPSE_JAVA\Programming_3_Workspace\.metadata\.plugins\org.eclipse.jdt.core
+4067428700.index
+1803114726.index
+157439478.index
