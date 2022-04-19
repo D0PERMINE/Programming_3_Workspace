@@ -17,8 +17,9 @@
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Sparbuch"/>
     <fullyQualifiedTypeName name="java.time.chrono.ChronoLocalDate"/>
     <fullyQualifiedTypeName name="sun.awt.image.OffScreenImage"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Konto"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
     <fullyQualifiedTypeName name="org.junit.Ignore"/>
+    <fullyQualifiedTypeName name="java.lang.Cloneable"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
 </qualifiedTypeNameHistroy>
