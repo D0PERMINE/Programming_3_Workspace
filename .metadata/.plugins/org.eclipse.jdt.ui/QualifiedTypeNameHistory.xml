@@ -20,4 +20,5 @@
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Konto"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
+    <fullyQualifiedTypeName name="org.junit.Ignore"/>
 </qualifiedTypeNameHistroy>
