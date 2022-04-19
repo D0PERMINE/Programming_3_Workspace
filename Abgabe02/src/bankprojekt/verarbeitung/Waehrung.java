@@ -1,15 +1,24 @@
+/**
+ * 
+ * Datum: 18.04.2022
+ * Programmierung 3 - Uebung 02
+ * Dozent: Dorothea Hubrich
+ * 
+ * Name: Timo Ji
+ * Matrikel-Nummer: 575725
+ * 
+ * Anmerkungen: 
+ * Ohne Partner gemacht.
+ * 
+ */
+
 package bankprojekt.verarbeitung;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-/*
- * 
- * 
- * 
- */
 
 /**
- * Behinhaltet verschiedene Waehrungen.
+ * Behinhaltet verschiedene Waehrungen und Methoden zur Umrechnung von Waehrungen.
  * @author timoj
  *
  */
@@ -20,9 +29,14 @@ public enum Waehrung {
 //	 (Mazedonischer Denar) haben - das sind alle die W�hrungen, die mit einem festen 
 //	 Umrechnungskurs an den Euro gebunden sind.
 	
-	// Const
+	/**
+	 * Konstanten: Euro, Bulgarische Leva, Dänische Kronen, Mazedonischer Denar
+	 */
 	EUR, BGN, DKK, MKD;
 	
+	/**
+	 * Zum Festlegen eines Umrechnungskurses zu Euro
+	 */
 	private double zuEuroUmrechnungskurs;
 	
 	static {
@@ -34,8 +48,8 @@ public enum Waehrung {
 	
 	/**
 	 * Sie soll den in Euro angegebenen Betrag in die jeweilige W�hrung umrechnen.
-	 * @param betrag
-	 * @return
+	 * @param betrag Der umzurechnende Euro Betrag
+	 * @return Liefert den umgerechneten Betrag von Euro zu der jeweilige Waehrung zurueck
 	 */
 	public double euroInWaehrungUmrechnen(double betrag) {
 		return betrag * this.zuEuroUmrechnungskurs;
@@ -43,8 +57,8 @@ public enum Waehrung {
 	
 	/**
 	 * Sie soll den in Euro angegebenen Betrag in die jeweilige W�hrung umrechnen.
-	 * @param betrag
-	 * @return
+	 * @param betrag Der Betrag der umzurechnender Wearhung 
+	 * @return Liefert den umgerechneten Betrag von der jeweilige Waehrung in Euro zurueck
 	 */
 	public double waehrungInEuroUmrechnen(double betrag) {
 //		BigDecimal bigDecimalBetrag = new BigDecimal(betrag);

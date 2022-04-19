@@ -65,14 +65,14 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="JavadocWizardDialog">
-		<item key="DIALOG_X_ORIGIN" value="545"/>
-		<item key="DIALOG_Y_ORIGIN" value="150"/>
-		<item key="DIALOG_WIDTH" value="847"/>
-		<item key="DIALOG_HEIGHT" value="567"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_X_ORIGIN" value="453"/>
+		<item key="DIALOG_Y_ORIGIN" value="122"/>
+		<item key="DIALOG_WIDTH" value="839"/>
+		<item key="DIALOG_HEIGHT" value="534"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
 	</section>
 	<section name="javadoc">
-		<item key="javadoc_command_history" value="C:\Users\timoj\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507\jre\bin\javadoc.exe"/>
+		<item key="javadoc_command_history" value="\Users\timoj\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.1.v20201027-0507\jre\bin\javadoc.exe:C"/>
 		<item key="fromStandard" value="true"/>
 		<item key="docletname" value=""/>
 		<item key="docletpath" value=""/>
@@ -88,13 +88,23 @@
 		<item key="nonavbar" value="false"/>
 		<item key="openinbrowser" value="false"/>
 		<item key="source" value="15"/>
-		<item key="antpath" value="H:\Programming\ECCLIPSE_JAVA\WORKSPACE_PROG_3\Uebung01\javadoc.xml"/>
-		<item key="destdir" value="H:\Programming\ECCLIPSE_JAVA\WORKSPACE_PROG_3\Uebung01\doc"/>
+		<item key="antpath" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe02/javadoc.xml"/>
+		<item key="destdir" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe02/doc"/>
 		<section name="projects">
-			<section name="Uebung01">
+			<section name="Abgabe01">
 				<item key="href" value=""/>
-				<item key="destdir" value="H:\Programming\ECCLIPSE_JAVA\WORKSPACE_PROG_3\Uebung01\doc"/>
-				<item key="antpath" value="H:\Programming\ECCLIPSE_JAVA\WORKSPACE_PROG_3\Uebung01\javadoc.xml"/>
+				<item key="destdir" value="/H:/Programming/ECCLIPSE_JAVA/WORKSPACE_PROG_3/Uebung01/doc"/>
+				<item key="antpath" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe01/javadoc.xml"/>
+			</section>
+			<section name="Abgabe02">
+				<item key="href" value=""/>
+				<item key="destdir" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe02/doc"/>
+				<item key="antpath" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe02/javadoc.xml"/>
+			</section>
+			<section name="Abgabe_02">
+				<item key="href" value=""/>
+				<item key="destdir" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe_02/doc"/>
+				<item key="antpath" value="/Users/timoji/Desktop/Education/HTW/5. Semester/Prog_3/Abgaben/Programming_3_Workspace/Abgabe_02/javadoc.xml"/>
 			</section>
 		</section>
 	</section>

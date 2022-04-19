@@ -1,3 +1,17 @@
+/**
+ * 
+ * Datum: 18.04.2022
+ * Programmierung 3 - Uebung 02
+ * Dozent: Dorothea Hubrich
+ * 
+ * Name: Timo Ji
+ * Matrikel-Nummer: 575725
+ * 
+ * Anmerkungen: 
+ * Ohne Partner gemacht.
+ * 
+ */
+
 package bankprojekt.verarbeitung;
 
 import java.time.LocalDate;
@@ -40,8 +54,8 @@ public class Sparbuch extends Konto {
 	* @param kontonummer die Wunsch-Kontonummer
 	* @throws IllegalArgumentException wenn inhaber null ist
 	*/
-	public Sparbuch(Kunde inhaber, long kontonummer) {
-		super(inhaber, kontonummer);
+	public Sparbuch(Kunde inhaber, long kontonummer, Waehrung kontoWaehrung) {
+		super(inhaber, kontonummer, kontoWaehrung);
 		zinssatz = 0.03;
 	}
 	
@@ -72,8 +86,15 @@ public class Sparbuch extends Konto {
 		if (getKontostand() - betrag >= 0.50 && 
 				 bereitsAbgehoben + betrag <= Sparbuch.ABHEBESUMME)
 		{
-			setKontostand(getKontostand() - betrag);
-			bereitsAbgehoben += betrag;
+			if(this.getAktuelleWaehrung() == Waehrung.EUR) {
+				setKontostand(getKontostand() - betrag);
+				bereitsAbgehoben += betrag;			
+			} 
+			else {
+				double betragInAktuellerWaehrung = this.getAktuelleWaehrung().euroInWaehrungUmrechnen(betrag);
+				setKontostand(getKontostand() - betragInAktuellerWaehrung);
+				bereitsAbgehoben += betragInAktuellerWaehrung;
+			}
 			this.zeitpunkt = LocalDate.now();
 			return true;
 		}

@@ -11,4 +11,13 @@
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
     <fullyQualifiedTypeName name="BruchVergleicher"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.GesperrtException"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Sparbuch"/>
+    <fullyQualifiedTypeName name="java.time.chrono.ChronoLocalDate"/>
+    <fullyQualifiedTypeName name="sun.awt.image.OffScreenImage"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Konto"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
 </qualifiedTypeNameHistroy>

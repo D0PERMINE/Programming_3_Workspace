@@ -1,3 +1,17 @@
+/**
+ * 
+ * Datum: 18.04.2022
+ * Programmierung 3 - Uebung 02
+ * Dozent: Dorothea Hubrich
+ * 
+ * Name: Timo Ji
+ * Matrikel-Nummer: 575725
+ * 
+ * Anmerkungen: 
+ * Ohne Partner gemacht.
+ * 
+ */
+
 package bankprojekt.verarbeitung;
 
 /**
@@ -17,7 +31,7 @@ public class Girokonto extends Konto implements Ueberweisungsfaehig{
 	 */
 	public Girokonto()
 	{
-		super(Kunde.MUSTERMANN, 99887766);
+		super(Kunde.MUSTERMANN, 99887766, Waehrung.EUR);
 		//super(); würde automatisch aufgerufen werden, wenn man sich nicht
 		//selber kümmert
 		this.dispo = 500;
@@ -30,9 +44,9 @@ public class Girokonto extends Konto implements Ueberweisungsfaehig{
 	 * @param dispo Dispo
 	 * @throws IllegalArgumentException wenn der inhaber null ist oder der angegebene dispo negativ bzw. NaN ist
 	 */
-	public Girokonto(Kunde inhaber, long nummer, double dispo)
+	public Girokonto(Kunde inhaber, long nummer, Waehrung kontoWaehrung, double dispo)
 	{
-		super(inhaber, nummer);
+		super(inhaber, nummer, kontoWaehrung);
 		if(dispo < 0 || Double.isNaN(dispo))
 			throw new IllegalArgumentException("Der Dispo ist nicht gültig!");
 		this.dispo = dispo;

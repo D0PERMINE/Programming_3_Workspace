@@ -1,3 +1,17 @@
+/**
+ * 
+ * Datum: 18.04.2022
+ * Programmierung 3 - Uebung 02
+ * Dozent: Dorothea Hubrich
+ * 
+ * Name: Timo Ji
+ * Matrikel-Nummer: 575725
+ * 
+ * Anmerkungen: 
+ * Ohne Partner gemacht.
+ * 
+ */
+
 package bankprojekt.verarbeitung;
 
 /**
@@ -19,6 +33,8 @@ public abstract class Konto implements Comparable<Konto>
 	 * der aktuelle Kontostand
 	 */
 	private double kontostand;
+	
+	private Waehrung kontoWaehrung;
 
 	/**
 	 * setzt den aktuellen Kontostand
@@ -42,20 +58,21 @@ public abstract class Konto implements Comparable<Konto>
 	 * @param kontonummer die gewünschte Kontonummer
 	 * @throws IllegalArgumentException wenn der Inhaber null
 	 */
-	public Konto(Kunde inhaber, long kontonummer) {
+	public Konto(Kunde inhaber, long kontonummer, Waehrung kontoWaehrung) {
 		if(inhaber == null)
 			throw new IllegalArgumentException("Inhaber darf nicht null sein!");
 		this.inhaber = inhaber;
 		this.nummer = kontonummer;
 		this.kontostand = 0;
 		this.gesperrt = false;
+		this.kontoWaehrung = kontoWaehrung;
 	}
 	
 	/**
 	 * setzt alle Eigenschaften des Kontos auf Standardwerte
 	 */
 	public Konto() {
-		this(Kunde.MUSTERMANN, 1234567);
+		this(Kunde.MUSTERMANN, 1234567, Waehrung.EUR);
 	}
 
 	/**
@@ -193,11 +210,11 @@ public abstract class Konto implements Comparable<Konto>
 	
 	/**
 	 * liefert den ordentlich formatierten Kontostand
-	 * @return formatierter Kontostand mit 2 Nachkommastellen und Währungssymbol €
+	 * @return formatierter Kontostand mit 2 Nachkommastellen und dem jeweiligen "Währungssymbol"
 	 */
 	public String getKontostandFormatiert()
 	{
-		return String.format("%10.2f Euro" , this.getKontostand());
+		return String.format("%10.2f %s" , this.getKontostand(), getAktuelleWaehrung());
 	}
 	
 	/**
@@ -243,22 +260,85 @@ public abstract class Konto implements Comparable<Konto>
 	
 	// ---------------------------------------------------------------------------- neue Methoden fuer Abgabe ----------------------------
 	
-//	public boolean abheben(double betrag, Waehrung w) throws GesperrtException {
-//		return false;
-//	}
-//	
-//	public void einzahlen(double betrag, Waehrung w) {
-//		
-//	}
-//	
-//	public Waehrung getAktuelleWaehrung() {
-//		return Waehrung
-//	}
-//
-//	public void waehrungswechsel(Waehrung neu) {
-//		
-//	}
-//
-//
+	/**
+	 * Hebt den gewünschten in der Währung w angegebenen Betrag ab.
+	 * @param betrag Betrag, der abgehoben soll.
+	 * @param w Die Waehrung, in der abgehoben werden soll.
+	 * @return liefert true zurueck, wenn das konto nicht gesperrt ist, sonst false
+	 * @throws GesperrtException Wenn Konto gesperrt ist.
+	 */
+	public boolean abheben(double betrag, Waehrung w) throws GesperrtException {
+		if(!this.gesperrt) {
+			
+			if(this.kontoWaehrung == Waehrung.EUR && w == Waehrung.EUR) {
+				this.setKontostand(this.getKontostand() - betrag);
+			} 
+			else if(this.kontoWaehrung == Waehrung.EUR && w != Waehrung.EUR) {
+				this.setKontostand(this.getKontostand() - w.waehrungInEuroUmrechnen(betrag));
+			} 
+			else if(this.kontoWaehrung != Waehrung.EUR && w == Waehrung.EUR) {
+				this.setKontostand(this.getKontostand() - this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
+			} 
+			else if(this.kontoWaehrung != Waehrung.EUR && w != Waehrung.EUR) {
+				double betragZwischenrechnung = w.waehrungInEuroUmrechnen(betrag);
+				this.setKontostand(this.getKontostand() - this.kontoWaehrung.euroInWaehrungUmrechnen(betragZwischenrechnung));
+			}
+			
+		}
+		else {
+			throw new GesperrtException(this.nummer);
+		}
+		return this.gesperrt;
+	}
+	
+	/**
+	 * Zahlt den in der Währung w angegebenen Betrag ein.
+	 * @param betrag Betrag, der eingezahlt werden soll.
+	 * @param w Waherung, in der eingezahlt werden soll.
+	 */
+	public void einzahlen(double betrag, Waehrung w) {
+		
+		if(this.kontoWaehrung == Waehrung.EUR && w == Waehrung.EUR) {
+			this.setKontostand(this.getKontostand() + betrag);
+		} 
+		else if(this.kontoWaehrung == Waehrung.EUR && w != Waehrung.EUR) {
+			this.setKontostand(this.getKontostand() + w.waehrungInEuroUmrechnen(betrag));
+		} 
+		else if(this.kontoWaehrung != Waehrung.EUR && w == Waehrung.EUR) {
+			this.setKontostand(this.getKontostand() + this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
+		} 
+		else if(this.kontoWaehrung != Waehrung.EUR && w != Waehrung.EUR) {
+			double betragZwischenrechnung = w.waehrungInEuroUmrechnen(betrag);
+			this.setKontostand(this.getKontostand() + this.kontoWaehrung.euroInWaehrungUmrechnen(betragZwischenrechnung));
+		} 
+	}
+	
+	/**
+	 * Liefert die aktuelle Waehrung in der das Konto gefuehrt wjrd zurueck.
+	 * @return Die akutelle Waehrung in der das Konto gefuehrt wird.
+	 */
+	public Waehrung getAktuelleWaehrung() {
+		return this.kontoWaehrung;
+	}
+
+	/**
+	 *  Wechselt die Waehrung vom Konto.
+	 * @param neu Die Waehrung, in die gewechselt werden soll.
+	 */
+	public void waehrungswechsel(Waehrung neu) {
+		
+		if(this.kontoWaehrung == Waehrung.EUR && neu != Waehrung.EUR) {
+			this.setKontostand(neu.euroInWaehrungUmrechnen(this.kontostand));
+		} 
+		else if(this.kontoWaehrung != Waehrung.EUR && neu == Waehrung.EUR) {
+			this.setKontostand(neu.waehrungInEuroUmrechnen(this.kontostand));
+		} 
+		else if(this.kontoWaehrung != Waehrung.EUR && neu != Waehrung.EUR) {
+			double betragZwischenrechnung = neu.waehrungInEuroUmrechnen(this.kontostand);
+			this.setKontostand(neu.euroInWaehrungUmrechnen(betragZwischenrechnung));
+		} 
+		
+		this.kontoWaehrung = neu;
+	}
 
 }

@@ -1,3 +1,17 @@
+/**
+ * 
+ * Datum: 18.04.2022
+ * Programmierung 3 - Uebung 02
+ * Dozent: Dorothea Hubrich
+ * 
+ * Name: Timo Ji
+ * Matrikel-Nummer: 575725
+ * 
+ * Anmerkungen: 
+ * Ohne Partner gemacht.
+ * 
+ */
+
 package bankprojekt.verarbeitung;
 
 import java.time.LocalDate;
