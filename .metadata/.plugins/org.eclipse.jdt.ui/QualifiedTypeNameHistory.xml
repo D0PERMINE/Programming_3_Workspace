@@ -8,18 +8,20 @@
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="java.nio.channels.IllegalChannelGroupException"/>
-    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
     <fullyQualifiedTypeName name="BruchVergleicher"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
     <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
-    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.GesperrtException"/>
-    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Sparbuch"/>
     <fullyQualifiedTypeName name="java.time.chrono.ChronoLocalDate"/>
     <fullyQualifiedTypeName name="sun.awt.image.OffScreenImage"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Konto"/>
-    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
     <fullyQualifiedTypeName name="org.junit.Ignore"/>
     <fullyQualifiedTypeName name="java.lang.Cloneable"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Sparbuch"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.GesperrtException"/>
+    <fullyQualifiedTypeName name="java.lang.AssertionError"/>
+    <fullyQualifiedTypeName name="sun.jvm.hotspot.utilities.AssertionFailure"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 </qualifiedTypeNameHistroy>
