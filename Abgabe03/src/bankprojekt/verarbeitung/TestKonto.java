@@ -12,10 +12,31 @@ class TestKonto {
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void abhebenTest() {
+		
+		assertTrue(false);
 	}
+	
+	@Test
+	void einzahlenTest() {
+		assertEquals("", null);
+		assertTrue(false);
+	}
+	
+	@Test
+	void getAktuelleWaehrungTest() {
+		assertEquals("", null);
+		assertTrue(false);
+	}
+	
+	@Test
+	void waehrungswechselTest() {
+		assertEquals("", null);
+		assertTrue(false);
+	}
+	
 
+	
 	/**
 	 * public boolean abheben(double betrag, Waehrung w) throws GesperrtException
 	 * public void einzahlen(double betrag, Waehrung w)
