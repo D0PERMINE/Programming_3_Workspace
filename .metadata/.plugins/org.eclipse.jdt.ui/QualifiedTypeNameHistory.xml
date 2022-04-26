@@ -19,9 +19,11 @@
     <fullyQualifiedTypeName name="java.lang.Cloneable"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Sparbuch"/>
-    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
     <fullyQualifiedTypeName name="bankprojekt.verarbeitung.GesperrtException"/>
     <fullyQualifiedTypeName name="java.lang.AssertionError"/>
     <fullyQualifiedTypeName name="sun.jvm.hotspot.utilities.AssertionFailure"/>
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="Kuscheltier"/>
+    <fullyQualifiedTypeName name="java.time.Period"/>
+    <fullyQualifiedTypeName name="bankprojekt.verarbeitung.Waehrung"/>
 </qualifiedTypeNameHistroy>
