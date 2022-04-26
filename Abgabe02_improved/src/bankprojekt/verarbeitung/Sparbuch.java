@@ -101,5 +101,25 @@ public class Sparbuch extends Konto {
 		else
 			return false;
 	}
+	
+//	/**
+//	 *  Wechselt die Waehrung vom Konto.
+//	 * @param neu Die Waehrung, in die gewechselt werden soll.
+//	 */
+//	public void waehrungswechsel(Waehrung neu) {
+//		
+//		if(this.getKontoWaehrung() == Waehrung.EUR && neu != Waehrung.EUR) {
+//			this.setKontostand(neu.euroInWaehrungUmrechnen(this.getKontostand()));
+//		} 
+//		else if(this.getKontoWaehrung() != Waehrung.EUR && neu == Waehrung.EUR) {
+//			this.setKontostand(neu.waehrungInEuroUmrechnen(this.getKontostand()));
+//		} 
+//		else if(this.getKontoWaehrung() != Waehrung.EUR && neu != Waehrung.EUR) {
+//			double betragZwischenrechnung = neu.waehrungInEuroUmrechnen(this.getKontostand());
+//			this.setKontostand(neu.euroInWaehrungUmrechnen(betragZwischenrechnung));
+//		} 
+//		
+//		this.setKontoWaehrung(neu);
+//	}
 
 }

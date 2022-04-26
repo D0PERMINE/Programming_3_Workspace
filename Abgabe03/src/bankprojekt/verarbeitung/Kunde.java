@@ -1,7 +1,7 @@
 /**
  * 
- * Datum: 18.04.2022
- * Programmierung 3 - Uebung 02
+ * Datum: 26.04.2022
+ * Programmierung 3 - Uebung 03
  * Dozent: Dorothea Hubrich
  * 
  * Name: Timo Ji

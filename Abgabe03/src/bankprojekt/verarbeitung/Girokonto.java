@@ -1,7 +1,7 @@
 /**
  * 
- * Datum: 18.04.2022
- * Programmierung 3 - Uebung 02
+ * Datum: 26.04.2022
+ * Programmierung 3 - Uebung 03
  * Dozent: Dorothea Hubrich
  * 
  * Name: Timo Ji
@@ -31,7 +31,7 @@ public class Girokonto extends Konto implements Ueberweisungsfaehig{
 	 */
 	public Girokonto()
 	{
-		super(Kunde.MUSTERMANN, 99887766, Waehrung.EUR);
+		super(Kunde.MUSTERMANN, 99887766);
 		//super(); würde automatisch aufgerufen werden, wenn man sich nicht
 		//selber kümmert
 		this.dispo = 500;
@@ -44,9 +44,9 @@ public class Girokonto extends Konto implements Ueberweisungsfaehig{
 	 * @param dispo Dispo
 	 * @throws IllegalArgumentException wenn der inhaber null ist oder der angegebene dispo negativ bzw. NaN ist
 	 */
-	public Girokonto(Kunde inhaber, long nummer, Waehrung kontoWaehrung, double dispo)
+	public Girokonto(Kunde inhaber, long nummer, double dispo)
 	{
-		super(inhaber, nummer, kontoWaehrung);
+		super(inhaber, nummer);
 		if(dispo < 0 || Double.isNaN(dispo))
 			throw new IllegalArgumentException("Der Dispo ist nicht gültig!");
 		this.dispo = dispo;
@@ -123,4 +123,23 @@ public class Girokonto extends Konto implements Ueberweisungsfaehig{
 			return false;
 	}
 
+//	/**
+//	 *  Wechselt die Waehrung vom Konto.
+//	 * @param neu Die Waehrung, in die gewechselt werden soll.
+//	 */
+//	public void waehrungswechsel(Waehrung neu) {
+//		
+//		if(this.getKontoWaehrung() == Waehrung.EUR && neu != Waehrung.EUR) {
+//			this.setKontostand(neu.euroInWaehrungUmrechnen(this.getKontostand()));
+//		} 
+//		else if(this.getKontoWaehrung() != Waehrung.EUR && neu == Waehrung.EUR) {
+//			this.setKontostand(neu.waehrungInEuroUmrechnen(this.getKontostand()));
+//		} 
+//		else if(this.getKontoWaehrung() != Waehrung.EUR && neu != Waehrung.EUR) {
+//			double betragZwischenrechnung = neu.waehrungInEuroUmrechnen(this.getKontostand());
+//			this.setKontostand(neu.euroInWaehrungUmrechnen(betragZwischenrechnung));
+//		} 
+//		
+//		this.setKontoWaehrung(neu);
+//	}
 }

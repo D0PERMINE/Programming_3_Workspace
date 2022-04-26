@@ -67,4 +67,7 @@ public enum Waehrung {
 		return betrag / this.zuEuroUmrechnungskurs;
 	}
 
+	public double waehrungZuWaehrung(double betrag, Waehrung w) {
+		return this.euroInWaehrungUmrechnen(w.waehrungInEuroUmrechnen(betrag));
+	}
 }

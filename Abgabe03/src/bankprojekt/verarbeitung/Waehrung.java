@@ -1,7 +1,7 @@
 /**
  * 
- * Datum: 18.04.2022
- * Programmierung 3 - Uebung 02
+ * Datum: 26.04.2022
+ * Programmierung 3 - Uebung 03
  * Dozent: Dorothea Hubrich
  * 
  * Name: Timo Ji
@@ -67,4 +67,13 @@ public enum Waehrung {
 		return betrag / this.zuEuroUmrechnungskurs;
 	}
 
+	/**
+	 * Soll eine den Betrag von einer Waerhung in eine andere Waehrung umrechenen
+	 * @param betrag betrag zum umrechnen
+	 * @param w waehrung in die umgerechnet werden soll
+	 * @return umgerechneter Betrag mit neuer Waehrung
+	 */
+	public double waehrungZuWaehrung(double betrag, Waehrung w) {
+		return this.euroInWaehrungUmrechnen(w.waehrungInEuroUmrechnen(betrag));
+	}
 }

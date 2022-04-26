@@ -35,6 +35,14 @@ public abstract class Konto implements Comparable<Konto>
 	private double kontostand;
 	
 	private Waehrung kontoWaehrung;
+	
+	protected void setKontoWaehrung(Waehrung kontoWaehrung) {
+		this.kontoWaehrung = kontoWaehrung;
+	}
+	
+	protected Waehrung getKontoWaehrung() {
+		return kontoWaehrung;
+	}
 
 	/**
 	 * setzt den aktuellen Kontostand
@@ -270,25 +278,41 @@ public abstract class Konto implements Comparable<Konto>
 	public boolean abheben(double betrag, Waehrung w) throws GesperrtException {
 		if(!this.gesperrt) {
 			
+//			if(this.kontoWaehrung == Waehrung.EUR && w == Waehrung.EUR) {
+//				this.setKontostand(this.getKontostand() - betrag);
+//			} 
+//			else if(this.kontoWaehrung == Waehrung.EUR && w != Waehrung.EUR) {
+//				this.setKontostand(this.getKontostand() - w.waehrungInEuroUmrechnen(betrag));
+//			} 
+//			else if(this.kontoWaehrung != Waehrung.EUR && w == Waehrung.EUR) {
+//				this.setKontostand(this.getKontostand() - this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
+//			} 
+//			else if(this.kontoWaehrung != Waehrung.EUR && w != Waehrung.EUR) {
+//				double betragZwischenrechnung = w.waehrungInEuroUmrechnen(betrag);
+//				this.setKontostand(this.getKontostand() - this.kontoWaehrung.euroInWaehrungUmrechnen(betragZwischenrechnung));
+//			}
+			
 			if(this.kontoWaehrung == Waehrung.EUR && w == Waehrung.EUR) {
-				this.setKontostand(this.getKontostand() - betrag);
+				return abheben(betrag);
 			} 
 			else if(this.kontoWaehrung == Waehrung.EUR && w != Waehrung.EUR) {
-				this.setKontostand(this.getKontostand() - w.waehrungInEuroUmrechnen(betrag));
+				return abheben(w.waehrungInEuroUmrechnen(betrag));
 			} 
 			else if(this.kontoWaehrung != Waehrung.EUR && w == Waehrung.EUR) {
-				this.setKontostand(this.getKontostand() - this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
+				return abheben(this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
 			} 
 			else if(this.kontoWaehrung != Waehrung.EUR && w != Waehrung.EUR) {
-				double betragZwischenrechnung = w.waehrungInEuroUmrechnen(betrag);
-				this.setKontostand(this.getKontostand() - this.kontoWaehrung.euroInWaehrungUmrechnen(betragZwischenrechnung));
+				return abheben(w.waehrungZuWaehrung(betrag, w));
 			}
+			
+			double umgerechnet = w.waehrungZuWaehrung(betrag, w);
+			return abheben(umgerechnet);
 			
 		}
 		else {
 			throw new GesperrtException(this.nummer);
 		}
-		return this.gesperrt;
+//		return this.gesperrt;
 	}
 	
 	/**
@@ -298,19 +322,35 @@ public abstract class Konto implements Comparable<Konto>
 	 */
 	public void einzahlen(double betrag, Waehrung w) {
 		
+//		if(this.kontoWaehrung == Waehrung.EUR && w == Waehrung.EUR) {
+//			this.setKontostand(this.getKontostand() + betrag);
+//		} 
+//		else if(this.kontoWaehrung == Waehrung.EUR && w != Waehrung.EUR) {
+//			this.setKontostand(this.getKontostand() + w.waehrungInEuroUmrechnen(betrag));
+//		} 
+//		else if(this.kontoWaehrung != Waehrung.EUR && w == Waehrung.EUR) {
+//			this.setKontostand(this.getKontostand() + this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
+//		} 
+//		else if(this.kontoWaehrung != Waehrung.EUR && w != Waehrung.EUR) {
+//			double betragZwischenrechnung = w.waehrungInEuroUmrechnen(betrag);
+//			this.setKontostand(this.getKontostand() + this.kontoWaehrung.euroInWaehrungUmrechnen(betragZwischenrechnung));
+//		} 
+		
 		if(this.kontoWaehrung == Waehrung.EUR && w == Waehrung.EUR) {
-			this.setKontostand(this.getKontostand() + betrag);
+			einzahlen(betrag);
 		} 
 		else if(this.kontoWaehrung == Waehrung.EUR && w != Waehrung.EUR) {
-			this.setKontostand(this.getKontostand() + w.waehrungInEuroUmrechnen(betrag));
+			einzahlen(w.waehrungInEuroUmrechnen(betrag));
 		} 
 		else if(this.kontoWaehrung != Waehrung.EUR && w == Waehrung.EUR) {
-			this.setKontostand(this.getKontostand() + this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
+			einzahlen(this.kontoWaehrung.euroInWaehrungUmrechnen(betrag));
 		} 
 		else if(this.kontoWaehrung != Waehrung.EUR && w != Waehrung.EUR) {
-			double betragZwischenrechnung = w.waehrungInEuroUmrechnen(betrag);
-			this.setKontostand(this.getKontostand() + this.kontoWaehrung.euroInWaehrungUmrechnen(betragZwischenrechnung));
-		} 
+			einzahlen(w.waehrungZuWaehrung(betrag, w));
+		}
+		
+//		double umgerechnet = w.waehrungZuWaehrung(betrag, w);
+//		einzahlen(umgerechnet);
 	}
 	
 	/**

@@ -1,7 +1,7 @@
 /**
  * 
- * Datum: 18.04.2022
- * Programmierung 3 - Uebung 02
+ * Datum: 26.04.2022
+ * Programmierung 3 - Uebung 03
  * Dozent: Dorothea Hubrich
  * 
  * Name: Timo Ji
@@ -54,8 +54,8 @@ public class Sparbuch extends Konto {
 	* @param kontonummer die Wunsch-Kontonummer
 	* @throws IllegalArgumentException wenn inhaber null ist
 	*/
-	public Sparbuch(Kunde inhaber, long kontonummer, Waehrung kontoWaehrung) {
-		super(inhaber, kontonummer, kontoWaehrung);
+	public Sparbuch(Kunde inhaber, long kontonummer) {
+		super(inhaber, kontonummer);
 		zinssatz = 0.03;
 	}
 	
@@ -101,5 +101,25 @@ public class Sparbuch extends Konto {
 		else
 			return false;
 	}
+	
+//	/**
+//	 *  Wechselt die Waehrung vom Konto.
+//	 * @param neu Die Waehrung, in die gewechselt werden soll.
+//	 */
+//	public void waehrungswechsel(Waehrung neu) {
+//		
+//		if(this.getKontoWaehrung() == Waehrung.EUR && neu != Waehrung.EUR) {
+//			this.setKontostand(neu.euroInWaehrungUmrechnen(this.getKontostand()));
+//		} 
+//		else if(this.getKontoWaehrung() != Waehrung.EUR && neu == Waehrung.EUR) {
+//			this.setKontostand(neu.waehrungInEuroUmrechnen(this.getKontostand()));
+//		} 
+//		else if(this.getKontoWaehrung() != Waehrung.EUR && neu != Waehrung.EUR) {
+//			double betragZwischenrechnung = neu.waehrungInEuroUmrechnen(this.getKontostand());
+//			this.setKontostand(neu.euroInWaehrungUmrechnen(betragZwischenrechnung));
+//		} 
+//		
+//		this.setKontoWaehrung(neu);
+//	}
 
 }

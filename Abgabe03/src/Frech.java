@@ -1,3 +1,16 @@
+/**
+ * 
+ * Datum: 26.04.2022
+ * Programmierung 3 - Uebung 03
+ * Dozent: Dorothea Hubrich
+ * 
+ * Name: Timo Ji
+ * Matrikel-Nummer: 575725
+ * 
+ * Anmerkungen: 
+ * Ohne Partner gemacht.
+ * 
+ */
 
 public interface Frech {
 	
